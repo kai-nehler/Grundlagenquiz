@@ -7,13 +7,13 @@ ui<-navbarPage(title="Quiz-Time",
                useShinyjs(),
                tabPanel("Spielinfos",
                         tags$h1("Spielregeln"),
-                        tags$p(tags$strong("Achtung!"),"Vor dem Beginn muss die Gruppengröße gewählt werden."),
+                        tags$p(tags$strong("Achtung!"),"Vor dem Beginn muss die GruppengrÃ¶ÃŸe gewÃ¤hlt werden."),
                         tags$p("Hier stehen die Regeln"),
-                        numericInput("groups","Anzahl der Gruppen wählen und bestätigen",value=4,min =2, max=6),
-                        actionButton("start","Bestätigen")),
+                        numericInput("groups","Anzahl der Gruppen wÃ¤hlen und bestÃ¤tigen",value=4,min =2, max=6),
+                        actionButton("start","BestÃ¤tigen")),
                tabPanel("Questionboard",
                         conditionalPanel(condition = "input.start =='0'",
-                                         tags$p(tags$strong("Achtung!"),"Vor dem Beginn muss unter Spielregeln die Gruppengröße gewählt werden.")),
+                                         tags$p(tags$strong("Achtung!"),"Vor dem Beginn muss unter Spielregeln die GruppengrÃ¶ÃŸe gewÃ¤hlt werden.")),
                         fluidRow(column(2,align="center",tags$p(tags$strong("Versuchsgrundlagen"),style = "color: black; background-color: #FF0018")),column(2,align="center",tags$p(tags$strong("Testtheorie"),style = "color: black; background-color: #FFA52C")),column(2,align="center",tags$p(tags$strong("statistische Grundlagen"),style = "color: black; background-color: #FFFF41")),column(2,align="center",tags$p(tags$strong("statistische Verfahren"),style = "color: black; background-color: #008018")),column(2,align="center",tags$p(tags$strong("R-Grundlagen"),style = "color: black; background-color: #0000F9")),column(2,align="center",tags$p(tags$strong("R-Befehle"),style = "color: black; background-color: #86007D"))),
                         fluidRow(column(2,actionButton(inputId = "R1_S1",label="1",style = "color: black; background-color: #FF0018",width = "184")),column(2,actionButton(inputId = "R1_S2",label="1",style = "color: black; background-color: #FFA52C",width = "184")),column(2,actionButton(inputId = "R1_S3",label="1",style = "color: black; background-color: #FFFF41",width = "184")),column(2,actionButton(inputId = "R1_S4",label="1",style = "color: black; background-color: #008018",width = "184")),column(2,actionButton(inputId = "R1_S5",label="1",style = "color: black; background-color: #0000F9",width = "184")),column(2,actionButton(inputId = "R1_S6",label="1",style = "color: black; background-color: #86007D",width = "184"))),
                         fluidRow(column(2,actionButton(inputId = "R2_S1",label="2",style = "color: black; background-color: #FF0018",width = "184")),column(2,actionButton(inputId = "R2_S2",label="2",style = "color: black; background-color: #FFA52C",width = "184")),column(2,actionButton(inputId = "R2_S3",label="2",style = "color: black; background-color: #FFFF41",width = "184")),column(2,actionButton(inputId = "R2_S4",label="2",style = "color: black; background-color: #008018",width = "184")),column(2,actionButton(inputId = "R2_S5",label="2",style = "color: black; background-color: #0000F9",width = "184")),column(2,actionButton(inputId = "R2_S6",label="2",style = "color: black; background-color: #86007D",width = "184"))),
@@ -26,11 +26,11 @@ ui<-navbarPage(title="Quiz-Time",
                                       actionButton(inputId = "submit","Antwort absenden"),
                                       textOutput("control"),
                                       textOutput("Info"),
-                                      actionButton("close","Frage schließen"))
+                                      actionButton("close","Frage schlieÃŸen"))
                         ),
                tabPanel("Ergebnisse",
                         conditionalPanel(condition = "input.start =='0'",
-                                         tags$p(tags$strong("Achtung!"),"Vor dem Beginn muss unter Spielregeln die Gruppengröße gewählt werden.")),
+                                         tags$p(tags$strong("Achtung!"),"Vor dem Beginn muss unter Spielregeln die GruppengrÃ¶ÃŸe gewÃ¤hlt werden.")),
                         plotOutput("result")
                )
 )
@@ -46,7 +46,7 @@ server <- function(input,output,session){
   observeEvent(once = TRUE, ignoreNULL = FALSE, ignoreInit = FALSE, eventExpr = start, { 
     showModal(modalDialog(
       h1('Willkommen zum Grundlagenquiz!'),
-      p('Das Quiz wurde im Rahmen der Veranstaltung "Experimentelles-Praktikum" an der Goethe-Uni in Frankfurt entwickelt und soll die Stoffe der Methodik aus dem ersten Bachelor-Semester spielerisch auffrischen. Das Spiel ist für mehrere Rategruppen konzipiert, braucht aber einen Moderator der die Oberfläche bedient und eine Liste mit der genauen Schreibweise der richtigen Antworten hat.'), 
+      p('Das Quiz wurde im Rahmen der Veranstaltung "Experimentelles-Praktikum" an der Goethe-Uni in Frankfurt entwickelt und soll die Stoffe der Methodik aus dem ersten Bachelor-Semester spielerisch auffrischen. Das Spiel ist fÃ¼r mehrere Rategruppen konzipiert, braucht aber einen Moderator der die OberflÃ¤che bedient und eine Liste mit der genauen Schreibweise der richtigen Antworten hat.'), 
       footer = modalButton("Start!")
     ))})
   
