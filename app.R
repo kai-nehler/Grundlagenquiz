@@ -51,7 +51,7 @@ server <- function(input,output,session){
     ))})
   
   #Define Questions, Answers and Information
-  question <- matrix(c("Frage",1:4,"Test2",5:28),5,6)
+  question <- matrix(c("Frage",1:4,"Test1",5:28),5,6)
   corrects<-matrix(c("antwort",1:4,"Test2", 5:28),5,6)
   infos<-matrix(c("Info",1:4,"Info2",5:28),5,6)
   
