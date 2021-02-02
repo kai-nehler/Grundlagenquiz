@@ -46,7 +46,7 @@ server <- function(input,output,session){
   observeEvent(once = TRUE, ignoreNULL = FALSE, ignoreInit = FALSE, eventExpr = start, { 
     showModal(modalDialog(
       h1('Willkommen zum Grundlagenquiz!'),
-      p('Das Quiz wurde im Rahmen der Veranstaltung "Experimentelles-Praktikum" an der Goethe-Uni in Frankfurt entwickelt und soll die Stoffe der Methodik aus dem ersten Bachelor-Semester spielerisch auffrischen. Das Spiel ist für mehrere Rategruppen konzipiert, braucht aber einen Moderator der die Oberfläche bedient und eine Liste mit der genauen Schreibweise der richtigen Antworten hat.'), 
+      p('Das Quiz wurde im Rahmen der Veranstaltung "Experimentelles-Praktikum" an der Goethe-Uni in Frankfurt entwickelt und soll die Stoffe der Methodik aus den ersten Bachelor-Semestern spielerisch auffrischen. Das Spiel ist für mehrere Rategruppen konzipiert, braucht aber einen Moderator der die Oberfläche bedient und eine Liste mit der genauen Schreibweise der richtigen Antworten hat.'), 
       footer = modalButton("Start!")
     ))})
   
